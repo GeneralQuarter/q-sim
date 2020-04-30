@@ -1,0 +1,22 @@
+{
+  "name": "q-sim",
+  "version": "0.0.1",
+  "description": "TypeScript Quantum Circuit Simulator",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc-watch --onSuccess \"node dist/index.js\""
+  },
+  "author": "Quentin Gangler",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/mathjs": "^6.0.5",
+    "tsc-watch": "^4.2.3",
+    "typescript": "^3.8.3"
+  },
+  "dependencies": {
+    "mathjs": "^6.6.4",
+    "uuid": "^8.0.0"
+  }
+}
