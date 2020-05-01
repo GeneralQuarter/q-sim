@@ -7,5 +7,5 @@ circuit.addGate('h', 0, [0]);
 
 circuit.run();
 
-console.log(circuit.state);
-console.log(circuit.measureAllMulti(1000000));
+// console.log(circuit.state);
+console.log('Results: ', circuit.measureAllMulti(1000000));

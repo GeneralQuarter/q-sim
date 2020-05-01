@@ -9,9 +9,9 @@ export type QWire = QGateSlot[];
 
 export class QCircuit {
   wires: QWire[];
-  state: {[key: string]: any}
+  state: { [key: string]: any }
   stateBits: number;
-  cRegs: {[cRegName: string]: number[]};
+  cRegs: { [cRegName: string]: number[] };
   collapsed: number[];
 
   constructor(qubitsCount = 1) {
@@ -19,7 +19,10 @@ export class QCircuit {
   }
 
   reset(qubitsCount = 1) {
-    this.wires = Array(qubitsCount).fill([]);
+    this.wires = [];
+    for (let i = 0; i < qubitsCount; i++) {
+      this.wires.push([]);
+    }
     this.state = {
       '0': complex(1, 0)
     };
@@ -46,7 +49,11 @@ export class QCircuit {
     }
 
     while (this.qubitsCount < (wire + 1)) {
-      this.wires.push(Array(this.columnsCount).fill(null));
+      const gates = []
+      for (let i = 0; i < this.columnsCount; i++) {
+        gates.push(null);
+      }
+      this.wires.push(gates);
     }
   }
 
@@ -152,7 +159,7 @@ export class QCircuit {
           let counter = (1 << unusedQubits.length);
           let toothless = elMask(0);
 
-          while(counter--) {
+          while (counter--) {
             const state = this.state[col];
 
             if (state) {

@@ -21,10 +21,10 @@ export const qBasicGates: { [name: string]: QGate } = {
     name: 'cx',
     description: 'Controlled NOT (CNOT) gate',
     matrix: [
-      [1,0,0,0],
-      [0,1,0,0],
-      [0,0,0,1],
-      [0,0,1,0]
+      [1, 0, 0, 0],
+      [0, 1, 0, 0],
+      [0, 0, 0, 1],
+      [0, 0, 1, 0]
     ]
   }
 }
