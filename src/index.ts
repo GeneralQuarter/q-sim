@@ -1,11 +1,17 @@
-import { QCircuit } from './q-circuit';
+import { QCpuGate } from './q-cpu-gate';
+import { QCpu } from './q-cpu';
 
-const circuit = new QCircuit(1);
+const gates: QCpuGate[] = [
+  {name: 'x', qubits: [1]},
+  {name: 'h', qubits: [1]},
+  {name: 'h', qubits: [0]},
+  // {name: 'x', qubits: [1]},
+  {name: 'cx', qubits: [0, 1]},
+  {name: 'h', qubits: [0]},
+];
 
-circuit.addGate('h', 0, [0]);
-// circuit.addGate('cx', 1, [0, 1]);
+const cpu = new QCpu();
 
-circuit.run();
+console.log(cpu.run(gates, 1000000));
 
-// console.log(circuit.state);
-console.log('Results: ', circuit.measureAllMulti(1000000));
+console.log(cpu);
