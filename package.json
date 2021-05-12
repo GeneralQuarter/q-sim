@@ -16,7 +16,7 @@
     "typescript": "^3.8.3"
   },
   "dependencies": {
-    "mathjs": "^6.6.4",
+    "mathjs": "^7.5.1",
     "uuid": "^8.0.0"
   }
 }
